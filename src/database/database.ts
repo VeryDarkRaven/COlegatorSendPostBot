@@ -75,14 +75,12 @@ function databaseСontroller (): IReturnDatabaseСontroller {
 
 
   async function getUserById(userId: number): Promise<IDBUser | undefined> {
-    // console.log('Запрос пользователя с ID:', userId);
     return new Promise((resolve, reject) => {
       db.get('SELECT * FROM users WHERE user_id = ?', userId, (err, row: IDBUser) => {
         if (err) {
           console.error('Ошибка при выполнении запроса:', err);
           reject(err);
         } else {
-          // console.log('Полученный результат:', row);
           resolve(row);
         }
       });
@@ -90,14 +88,12 @@ function databaseСontroller (): IReturnDatabaseСontroller {
   }
 
   async function getUserIdsArr(userId: number): Promise<number[]> {
-    // console.log('Запрос пользователя с ID:', userId);
     return new Promise((resolve, reject) => {
       db.get('SELECT * FROM users WHERE user_id = ?', userId, (err, row: IDBUser) => {
         if (err) {
           console.error('Ошибка при выполнении запроса:', err);
           reject(err);
         } else {
-          // console.log('Полученный результат:', row);
           if (row.post_ids && row.post_ids.length > 0) {
             resolve(row.post_ids.split(',').map((id: string) => +id));
           } else {
