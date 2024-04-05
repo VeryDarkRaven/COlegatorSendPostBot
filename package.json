@@ -1,0 +1,28 @@
+{
+  "name": "tgaudiopost",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/app.js",
+    "build": "tsc",
+    "nodemon": "nodemon --watch \"**/*.ts\" --exec \"ts-node\" app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-cron": "^3.0.11",
+    "dotenv": "^16.4.5",
+    "node-cron": "^3.0.3",
+    "nodemon": "^3.1.0",
+    "sqlite3": "^5.1.7",
+    "telegraf": "^4.15.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^20.11.20"
+  }
+}
