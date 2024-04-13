@@ -78,7 +78,6 @@ function databaseСontroller() {
     }
     function getUserById(userId) {
         return __awaiter(this, void 0, void 0, function* () {
-            // console.log('Запрос пользователя с ID:', userId);
             return new Promise((resolve, reject) => {
                 db.get('SELECT * FROM users WHERE user_id = ?', userId, (err, row) => {
                     if (err) {
@@ -86,7 +85,6 @@ function databaseСontroller() {
                         reject(err);
                     }
                     else {
-                        // console.log('Полученный результат:', row);
                         resolve(row);
                     }
                 });
@@ -95,7 +93,6 @@ function databaseСontroller() {
     }
     function getUserIdsArr(userId) {
         return __awaiter(this, void 0, void 0, function* () {
-            // console.log('Запрос пользователя с ID:', userId);
             return new Promise((resolve, reject) => {
                 db.get('SELECT * FROM users WHERE user_id = ?', userId, (err, row) => {
                     if (err) {
@@ -103,7 +100,6 @@ function databaseСontroller() {
                         reject(err);
                     }
                     else {
-                        // console.log('Полученный результат:', row);
                         if (row.post_ids && row.post_ids.length > 0) {
                             resolve(row.post_ids.split(',').map((id) => +id));
                         }

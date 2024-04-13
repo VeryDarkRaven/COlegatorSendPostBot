@@ -11,7 +11,13 @@ import { TypeContext, TypeChannelPostWithText, IChannel, IDBUser } from "./src/t
 
 import { databaseСontroller } from "./src/database/database";
 
+import { expressStart } from "./src/server";
 
+
+
+
+
+expressStart();
 
 
 
@@ -111,7 +117,7 @@ bot.command('sendpost', async (ctx) => {
     userId = getUserId(ctx) as number;
   }
 
-  console.log(userId);
+  sendPost();
 })
 
 

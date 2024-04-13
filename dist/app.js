@@ -18,6 +18,8 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const commands_1 = require("./src/commands");
 const database_1 = require("./src/database/database");
+const server_1 = require("./src/server");
+(0, server_1.expressStart)();
 const dbController = (0, database_1.databaseСontroller)();
 dbController.createDB();
 const bot = new telegraf_1.Telegraf(process.env.BOT_TOKEN);
@@ -83,7 +85,7 @@ bot.command('sendpost', (ctx) => __awaiter(void 0, void 0, void 0, function* () 
     if (!userId) {
         userId = getUserId(ctx);
     }
-    console.log(userId);
+    sendPost();
 }));
 bot.on('text', (ctx) => __awaiter(void 0, void 0, void 0, function* () {
     if (!userId) {
