@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./dist/app.js",
     "build": "tsc",
+    "build-and-start": "npm run build && npm run start",
     "nodemon": "nodemon --watch \"**/*.ts\" --exec \"ts-node\" app.ts"
   },
   "keywords": [],
